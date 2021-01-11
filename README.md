@@ -1,10 +1,10 @@
-<<<<<<< HEAD
 ## 2021 컴퓨터공학부 졸업작품   
 ### 주제 : Deep Learning을 적용한 CFRP(탄소 섬유 강화 플라스틱) 가공 결함 검출   
 
 ***   
 
-#### 팀 구성   
+### 팀 구성   
+  한국산업기술대학교 컴퓨터공학부   
   - 조현민   
   - 황규빈   
   - 최성훈   
@@ -12,18 +12,18 @@
 
 #### 프로그램 구성   
   1. 언어   
-      > Python   
+      > Python Keras Image Generator(CV Open Source, Python version)   
       > Java   
       > JSP   
-      > Keras Image Generator(CV Open Source, Python version)   
 
   2. 운영체제   
-      > Ubuntu Linux   
-      > Windows 10   
-      > AWS GPU(instance 미확정)   
+      > Ubuntu Linux 16ver   
+      > Windows 10 64bits   
+      > AWS Server(instance 미확정)   
 
   3. 개발 툴   
       > Spring   
+      > Pycharm   
 
 #### 졸업작품 일정   
   - **2021.01.07일(목)**   
