@@ -5,6 +5,7 @@
    
 
 ### 사전 준비   
+
   ** Tomcat 버전과 JDK 버전은 동일한 버전으로 설치한다.**   
 
   - Ubuntu Linux 16ver virtual machine   
@@ -37,11 +38,12 @@
    
   5. 환경 변수 설정을 위해 profile을 편집한다.   
       > **sudo [editor 이름] /etc/profile**   
-      ```java
+
+```java
 	export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 	export PATH=$JAVA_HOME/bin/:$PATH
 	export CLASS_PATH=$JAVA_HOME/lib:$CLASS_PATH
-      ```   
+```   
   6. profile을 reload한다.   
       > **source /etc/profile**   
    
