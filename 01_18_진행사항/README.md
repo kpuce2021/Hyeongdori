@@ -23,7 +23,7 @@
 
 
 
-#### 1. 시스템 설계 내용에 대한 구체적인 설명
+### 1. 시스템 설계 내용에 대한 구체적인 설명
 
 - **딥 러닝 학습 과정**
 
@@ -67,13 +67,14 @@
 
    
 
-#### 2. Product backlog와 첫 번째 sprint 계획(Sprint backlog 포함)
+### 2. Product backlog와 첫 번째 sprint 계획(Sprint backlog 포함)
 
 [Hyeongdori Projects](https://github.com/kpuce2021/Hyeongdori/projects/1)
 
 
+   
 
-#### 3. 7일 동안의 Github 활동 내역 설명 
+### 3. 7일 동안의 Github 활동 내역 설명 
 
 * [필요 기술 조사](https://github.com/kpuce2021/Hyeongdori/tree/LHS)
 * 한국생산기술연구원 방문
