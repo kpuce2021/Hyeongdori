@@ -54,9 +54,9 @@
 - **Tomcat Server**
 
   	1. JSP Page를 통해 사용자에게 결함 검출 후 결과 이미지를 보여준다.
-   	2. 사용자에게 결함 검출 대상 이미지를 전송 받는다.
-   	3. 전송 받은 이미지는 **Input Storage**, 결함 검출 프로그램으로부터 전송 받은 이미지는 **Output Storage**에 저장된다.
-   	4. AWS의 서버에 Tomcat Server를 설치해서 운용한다.
+  	2. 사용자에게 결함 검출 대상 이미지를 전송 받는다.
+  	3. 전송 받은 이미지는 **Input Storage**, 결함 검출 프로그램으로부터 전송 받은 이미지는 **Output Storage**에 저장된다.
+  	4. AWS의 서버에 Tomcat Server를 설치해서 운용한다.
 
 
 
@@ -69,10 +69,10 @@
 
 ### 2. Product backlog와 첫 번째 sprint 계획(Sprint backlog 포함)
 
-[Hyeongdori Projects](https://github.com/kpuce2021/Hyeongdori/projects/1)
+* [Hyeongdori Projects](https://github.com/kpuce2021/Hyeongdori/projects/1)
 
 
-   
+
 
 ### 3. 7일 동안의 Github 활동 내역 설명 
 
