@@ -15,6 +15,12 @@
 
 
 
+### **훈련용 데이터 샘플**
+
+![cat 1](https://user-images.githubusercontent.com/55940552/105144314-64140400-5b40-11eb-894c-f057cb49ecb3.jpg)
+
+![dog 2](https://user-images.githubusercontent.com/55940552/105144326-68402180-5b40-11eb-867f-2e86702c2865.jpg)
+
 ***
 
 **출처**
