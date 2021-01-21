@@ -16,3 +16,8 @@
   
 ### 4. Pytorch 설치
   - conda install -c peterjc123 pytorch cuda90
+
+### 5. OpenCV 설치
+  - conda install conda install -c conda-forge opencv
+  
+참조링크 https://sangmoo.tistory.com/111
