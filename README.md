@@ -2,6 +2,6 @@
 https://webnautes.tistory.com/1433
 
 ### yolov3의 기본 모델을 사용해 객체 인식
+##### 구글에서 가져온 이미지를 이용해 테스트
 ![Alt text](/test.jpg)
 ![Alt text](/predictions.jpg)
-# 구글에서 가져온 이미지를 이용해 테스트
