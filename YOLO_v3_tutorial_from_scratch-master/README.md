@@ -11,3 +11,6 @@
 
 ### messi 검출된 사진
 ![messi result](https://user-images.githubusercontent.com/51106028/105631063-d01fa080-5e8f-11eb-8cce-bdab53f847fe.PNG)
+
+
+- 참고 git 주소 : https://github.com/ayooshkathuria/YOLO_v3_tutorial_from_scratch
