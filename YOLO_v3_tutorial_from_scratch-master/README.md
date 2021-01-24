@@ -1,17 +1,12 @@
-# YOLO_v3_tutorial_from_scratch
-Accompanying code for Paperspace tutorial series ["How to Implement YOLO v3 Object Detector from Scratch"](https://blog.paperspace.com/how-to-implement-a-yolo-object-detector-in-pytorch/)
+# YOLO_v3 검출 예시
 
-Here's what a typical output of the detector will look like ;)
+###원본 사진
+![dog-cycle-car](https://user-images.githubusercontent.com/51106028/105630826-913d1b00-5e8e-11eb-819d-adaf5f2f5777.png)
 
-![Detection Example](https://i.imgur.com/m2jwnen.png)
+![messi](https://user-images.githubusercontent.com/51106028/105631079-e62d6100-5e8f-11eb-8954-e3b165afc7de.jpg)
 
-## About the training Code
 
-This code is only mean't as a companion to the tutorial series and won't be updated. If you want to have a look at the ever updating YOLO v3 code, go to my other repo at https://github.com/ayooshkathuria/pytorch-yolo-v3
+###검출된 사진
+![cycle   dog](https://user-images.githubusercontent.com/51106028/105630867-c9445e00-5e8e-11eb-862a-dc31f5986366.PNG)
 
-Also, the other repo offers a lot of customisation options, which are not present in this repo for making tutorial easier to follow. (Don't wanna confuse the shit out readers, do we?)
-
-About when is the training code coming? I have my undergraduate thesis this May, and will be busy. So, you might have to wait for a till the second part of May. 
-
-Cheers
-
+![messi result](https://user-images.githubusercontent.com/51106028/105631063-d01fa080-5e8f-11eb-8cce-bdab53f847fe.PNG)
