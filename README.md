@@ -15,6 +15,6 @@ https://webnautes.tistory.com/1433
 ![Alt text](/이미지생성/images/30-1.jpg)
 
 #### 생성 이미지
-![Alt text](/이미지생성/images/gen_0_66.jpg)
-![Alt text](/이미지생성/images/gen_0_3925.jpg)
-![Alt text](/이미지생성/images/gen_0_6597.jpg)
+![Alt text](/이미지생성/gen_images/gen_0_66.jpg)
+![Alt text](/이미지생성/gen_images/gen_0_3925.jpg)
+![Alt text](/이미지생성/gen_images/gen_0_6597.jpg)
