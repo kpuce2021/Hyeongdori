@@ -1,3 +1,7 @@
+### 실행 방법 (cmd)
+C:\Users\LG\Desktop\졸작\Yolo_mark\x64\Release>yolo_mark.exe [path_to_images] [train.txt] [obj.names]
+
+C:\Users\LG\Desktop\졸작\Yolo_mark\x64\Release>yolo_mark.exe C:\Users\LG\Desktop\졸작\Yolo_mark\x64\Release\data\img data\train.txt data\obj.names
 
 ### 사용 설명서
 
