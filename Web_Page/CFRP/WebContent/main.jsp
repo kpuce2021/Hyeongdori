@@ -65,21 +65,21 @@
          <!-- left content -->
          <div class="col-sm-3">
 
-         <% if(request.isRequestedSessionIdValid()){%>
+         
              <table>
                  <tr>
                      <td>
                 <span style = "font-size:1.0em;  color: black; margin:4px">
-    	            <%=session.getAttribute("sessionName")%>님<br> 환영합니다.
+    	            
 	            </span>
                      </td>
                  </tr>
              </table>
              <hr>
-             <%@include file="Logout_sidebar.jsp" %>
-             <% }else{%>
+             <!-- <%@include file="Logout_sidebar.jsp" %> -->
+             
          <%@include file="Login_sidebar.jsp" %>
-            <%}%>
+           
              <hr>
             <!-- side menu (link) -->
             <%@include file="sidebar.jsp" %>
@@ -98,6 +98,7 @@
              <!-- 넣고싶은 글 넣으면 됌  -->
          </div>
       </div>
+      <hr>
    </div>
    <!-- footer -->
    <jsp:include page="footer.jsp" />
