@@ -4,7 +4,7 @@
 <div class="form-group row">
     <div class="col-sm-offset-2 col-sm-10">
         <div>
-            <input type="button" style="height:30pt" class="btn btn-outline-light"
+            <input type="button" style="height:20pt" class="btn btn-outline-light"
                    id="logoutBtn" onClick="window.location.href = 'logout.jsp'" value="로그아웃">
         </div>
 

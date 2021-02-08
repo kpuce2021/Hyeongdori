@@ -3,7 +3,7 @@
 
 <div class="form-group row">
 	<div class="col-sm-offset-2 col-sm-10">
-		<input type="button" style="width: 190pt;margin-bottom: 15px; height:30pt" class="btn btn-primary" id="loginBtn"
+		<input type="button" style="width: 190pt;margin-bottom: 5px; height:20pt" class="btn btn-primary" id="loginBtn"
          		onClick="window.location.href='login.jsp'" value="로그인">
        
 		<input type="button" style="width: 190pt; height:30pt" class="btn btn-primary" id="signupBtn"

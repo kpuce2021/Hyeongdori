@@ -75,12 +75,7 @@
                      </td>
                  </tr>
              </table>
-             <hr>
-             <!-- <%@include file="Logout_sidebar.jsp" %> -->
              
-         <%@include file="Login_sidebar.jsp" %>
-           
-             <hr>
             <!-- side menu (link) -->
             <%@include file="sidebar.jsp" %>
          </div>

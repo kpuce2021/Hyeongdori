@@ -75,19 +75,14 @@
                      </td>
                  </tr>
              </table>
-             <hr>
-             <!-- <%@include file="Logout_sidebar.jsp" %> -->
              
-         <%@include file="Login_sidebar.jsp" %>
-           
-             <hr>
             <!-- side menu (link) -->
             <%@include file="sidebar.jsp" %>
          </div>
          <!-- right content -->
          <div class="col-sm-8">
-            <h2>팀형돌이 '딥러닝을 적용한 CFRP 가공 결함 검출'</h2>
-            <p>2020-01-10 ~ 2021-08-10</p>
+            <h2 class="front-italic">'딥러닝을 적용한 CFRP 가공 결함 검출'</h2>
+            <p class="front-italic">2020-01-10 ~ 2021-08-10</p>
             <hr>
             <!-- side menu (link) -->
             <h3>주제</h3>
