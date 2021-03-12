@@ -29,6 +29,7 @@
 - 현재 진행 사항
 - Yolo V5 모델 현재 검출률
   - 현재 사용 중인 손실 계산 함수 : ***평균 제곱 오차***
+  - [📃 손실 계산 함수 내부](https://github.com/kpuce2021/Hyeongdori/blob/master/%ED%94%BC%EB%93%9C%EB%B0%B1/03_11_%EB%B0%9C%ED%91%9C%ED%94%BC%EB%93%9C%EB%B0%B1/%EB%94%A5%EB%9F%AC%EB%8B%9D%20%EC%86%90%EC%8B%A4%EA%B3%84%EC%82%B0%ED%95%A8%EC%88%98.md)
 - 문제점 및 문제 해결 방안 
 
 <br> 
