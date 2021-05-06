@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="query">
+     <insert id="saveImage" parameterType="java.util.Map"
+     	useGeneratedKeys="true" keyProperty="idx" >
+     	insert into img_table(img) values(#{img})
+     </insert>
+     
+  
+     <select id="selectAll" resultType="com.kpu.domain.FileVO">
+     	<![CDATA[
+     		select img from img_table
+     	]]>
+     </select>
+   
+     
+     <select id="getByteImage" resultType="java.util.Map">
+     	select img from img_table where idx=3
+     </select>
+</mapper>
+
