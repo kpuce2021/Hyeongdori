@@ -1,0 +1,6 @@
+#!/bin/sh
+
+python3 /var/lib/yolov5/detect.py
+
+exit 0
+
