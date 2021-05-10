@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -13,49 +12,64 @@
         android:id="@+id/take_picture_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
         android:text="@string/take_picture"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toStartOf="@id/select_img_button"
         app:layout_constraintHorizontal_chainStyle="packed"
-        android:layout_marginRight="20dp"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:layout_marginLeft="20dp"
-        app:layout_constraintStart_toEndOf="@id/take_picture_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/take_picture_button"
         android:id="@+id/select_img_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/select_img" />
+        android:layout_marginLeft="20dp"
+        android:text="@string/select_img"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/take_picture_button"
+        app:layout_constraintTop_toTopOf="@id/take_picture_button" />
 
 
     <ImageView
-        android:background="@drawable/round_image"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="50dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/take_picture_button"
-        app:layout_constraintBottom_toTopOf="@id/upload_img_button"
         android:id="@+id/img_selected"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:scaleType="centerCrop" />
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/round_image"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toTopOf="@id/upload_img_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/take_picture_button" />
 
     <Button
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/img_selected"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:id="@+id/upload_img_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/upload_img" />
+        android:text="@string/upload_img"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img_selected" />
+
+    <TextView
+        android:id="@+id/describeImgText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img_selected"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:text="사진 설명1"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:textSize="30sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,7 +5,6 @@ import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -13,21 +12,25 @@ import android.os.Environment
 import android.provider.MediaStore
 import android.util.Base64
 import android.util.Log
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
-import androidx.core.net.toUri
 import com.android.volley.AuthFailureError
+import com.android.volley.DefaultRetryPolicy
 import com.android.volley.RequestQueue
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.bumptech.glide.Glide
+import org.json.JSONObject
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileNotFoundException
@@ -44,11 +47,14 @@ class MainActivity : AppCompatActivity() {
     private val upload_img_button:Button by lazy {  findViewById<Button>(R.id.upload_img_button)  }
 
     private val imageView:ImageView by lazy {  findViewById<ImageView>(R.id.img_selected) }
+
+    private val describeText:TextView by lazy { findViewById<TextView>(R.id.describeImgText) }
+
     lateinit var photoURI: Uri
     lateinit var currentPhotoPath: String
     lateinit var selected_bitmap:Bitmap
     var requestQueue: RequestQueue? = null
-    var myUrl = "http://13.125.244.143:8080/main-1.0.0-BUILD-SNAPSHOT/receive/receiveImage"
+    var myUrl = "http://3.37.42.228:8080/main-1.0.0-BUILD-SNAPSHOT/receive/receiveImage"
 
     companion object {
         val Gallery = 0
@@ -131,13 +137,24 @@ class MainActivity : AppCompatActivity() {
 
             //sending image to server
             val request: StringRequest = object : StringRequest(Method.POST, myUrl, Response.Listener { s ->
-                try{
-                selected_bitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, s.toUri())
-                Glide.with(this).load(s).into(imageView)
-                } catch (ex: java.lang.Exception){
-                    imageView.setImageBitmap(null)
-                }
-            }, Response.ErrorListener { volleyError -> Toast.makeText(this@MainActivity, "Some error occurred -> $volleyError", Toast.LENGTH_LONG).show() }) {
+                Log.d("response", s.toString())
+
+//                try{
+                val jsonObject = JSONObject(s)
+                Log.d("response", jsonObject.get("url").toString())
+                Glide.with(this).load(jsonObject.get("url").toString()).into(imageView)
+
+                upload_img_button.visibility = GONE
+                describeText.text = jsonObject.get("result").toString()
+                describeText.visibility = VISIBLE
+
+//                } catch (ex: java.lang.Exception){
+//                    imageView.setImageBitmap(null)
+//                }
+            }, Response.ErrorListener { volleyError ->
+                Toast.makeText(this@MainActivity, "Some error occurred -> $volleyError", Toast.LENGTH_LONG).show()
+
+            }) {
                 //adding parameters to send
                 @Throws(AuthFailureError::class)
                 override fun getParams(): Map<String, String> {
@@ -146,6 +163,13 @@ class MainActivity : AppCompatActivity() {
                     return parameters
                 }
             }
+
+
+            request.retryPolicy = DefaultRetryPolicy(
+                5000,
+                10,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
+            )
 
             val rQueue = Volley.newRequestQueue(this@MainActivity)
             rQueue.add(request)
