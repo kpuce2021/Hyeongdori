@@ -1,8 +1,10 @@
 package org.techtown.graduation
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -14,7 +16,11 @@ class PictureItemAdapter:ListAdapter<PictureItem, PictureItemAdapter.ViewHolder>
         fun bind(pictureItem : PictureItem){
             view.findViewById<TextView>(R.id.pictureDateText).text = pictureItem.pictureDate
             view.findViewById<TextView>(R.id.pictureContentText).text = pictureItem.pictureContent
-            Glide.with(view.context).load(pictureItem.pictureUrl)
+            Glide
+                .with(view.context)
+                .load(pictureItem.pictureUrl)
+                .into(view.findViewById<ImageView>(R.id.pictureImage))
+            Log.d("Adapter", pictureItem.pictureUrl)
         }
     }
 
