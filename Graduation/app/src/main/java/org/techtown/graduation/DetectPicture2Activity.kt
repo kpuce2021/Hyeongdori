@@ -66,7 +66,6 @@ class DetectPicture2Activity : AppCompatActivity() {
 
 
     companion object {
-        var last_id = 0
         val REQUEST_SELECT_IN_GALLERY = 0
         val REQUEST_TAKE_PHOTO = 1
         val REQUEST_PERMISSIONS = 100
@@ -85,7 +84,7 @@ class DetectPicture2Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        userDB = Firebase.database.reference.child(USERS)
+        userDB = Firebase.database.reference
         initTakePictureButton()
         initSelectImgButton()
 //        initUploadImgButton()
@@ -230,14 +229,16 @@ class DetectPicture2Activity : AppCompatActivity() {
     }
 
     private fun savePictureToDB(url:String){
+        val currentUserDB =userDB.child(getCurrentUserID()).child("Picture").push()
         val picture = mutableMapOf<String, Any>()
-        last_id += 1
-        picture[PictureId] = (last_id).toString()
+
+
+        picture[PictureId] = currentUserDB.key.toString()
         picture[PictureDate] = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
         picture[PictureContent] = binding.describeImgText.text.toString()
         picture[PictureUrl] = url
 
-        val currentUserDB =userDB.child(getCurrentUserID()).child((last_id).toString())
+
         currentUserDB.updateChildren(picture)
         finish()
     }

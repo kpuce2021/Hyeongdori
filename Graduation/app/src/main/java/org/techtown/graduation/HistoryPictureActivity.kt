@@ -15,11 +15,11 @@ import org.techtown.graduation.DBKey.Companion.PictureUrl
 import org.techtown.graduation.DBKey.Companion.PictureId
 import org.techtown.graduation.DBKey.Companion.PictureDate
 import org.techtown.graduation.DBKey.Companion.PictureContent
+import java.util.HashMap
 
 
 class HistoryPictureActivity : AppCompatActivity() {
 
-    var last_id = 1
     private var auth : FirebaseAuth = FirebaseAuth.getInstance()
     private lateinit var userDB : DatabaseReference
 
@@ -30,21 +30,14 @@ class HistoryPictureActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_history_picture)
 
-        userDB = Firebase.database.reference.child(USERS)
+        userDB = Firebase.database.reference.child(getCurrentUserID())
 
         initHistoryRecyclerView()
-        getPictures()
+        getPictureByUser()
 
-        val currentUserDB = userDB.child(getCurrentUserID())
-        currentUserDB.addListenerForSingleValueEvent(object:ValueEventListener{
-            override fun onDataChange(snapshot: DataSnapshot) {
+//        val currentUserDB = userDB.child(getCurrentUserID())
 
-            }
 
-            override fun onCancelled(error: DatabaseError) {
-            }
-
-        })
 
     }
 
@@ -55,47 +48,41 @@ class HistoryPictureActivity : AppCompatActivity() {
     }
 
     private fun getPictures(){
-        val picturesDB = userDB.child(getCurrentUserID())
+        val picturesDB = userDB.child("Picture")
 
         picturesDB.addChildEventListener(object:ChildEventListener{
             override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {
                 getPictureByUser()
             }
 
-            override fun onChildChanged(snapshot: DataSnapshot, previousChildName: String?) {
-            }
-
-            override fun onChildRemoved(snapshot: DataSnapshot) {
-            }
-
-            override fun onChildMoved(snapshot: DataSnapshot, previousChildName: String?) {
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-            }
-
+            override fun onChildChanged(snapshot: DataSnapshot, previousChildName: String?) { }
+            override fun onChildRemoved(snapshot: DataSnapshot) { }
+            override fun onChildMoved(snapshot: DataSnapshot, previousChildName: String?) { }
+            override fun onCancelled(error: DatabaseError) { }
         })
     }
 
     private fun getPictureByUser(){
-        val currentUserDB = userDB.child(getCurrentUserID()).child(last_id++.toString())
+        val currentUserDB = userDB.child("Picture")
         currentUserDB.addListenerForSingleValueEvent(object :ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
-                val hashValue = snapshot.value as HashMap<String, String>
-                Log.d("hashValue", hashValue.toString())
-                pictureItem.add(
-                    PictureItem(
-                    hashValue.get(PictureId).toString(),
-                    hashValue.get(PictureUrl).toString(),
-                    hashValue.get(PictureDate).toString(),
-                    hashValue.get(PictureContent).toString())
-                )
-                adapter.submitList(pictureItem)
-                Log.d("hashValue", pictureItem.toString())
-            }
-            override fun onCancelled(error: DatabaseError) {
-            }
+                val hashValue = snapshot.value as HashMap<*, *>
+                val keys = hashValue.keys
 
+                for (i in keys){
+                    val iHash = hashValue.get(i) as HashMap<*, *>
+                    pictureItem.add(
+                        PictureItem(
+                            iHash.get(PictureId).toString(),
+                            iHash.get(PictureUrl).toString(),
+                            iHash.get(PictureDate).toString(),
+                            iHash.get(PictureContent).toString())
+                    )
+                }
+                adapter.submitList(pictureItem)
+                Log.d("hashValue", hashValue.toString())
+            }
+            override fun onCancelled(error: DatabaseError) {}
         })
     }
 

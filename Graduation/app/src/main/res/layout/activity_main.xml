@@ -17,8 +17,23 @@
         app:layout_constraintEnd_toStartOf="@id/historyPictureView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintVertical_bias="0.6"
-        android:background="@drawable/round_image"
+        android:background="@drawable/round_blue_button"
         />
+
+    <TextView
+        android:layout_height="0dp"
+        android:layout_width="0dp"
+        app:layout_constraintStart_toStartOf="@id/detectPictureView"
+        app:layout_constraintEnd_toEndOf="@id/detectPictureView"
+        app:layout_constraintTop_toTopOf="@id/detectPictureView"
+        app:layout_constraintBottom_toBottomOf="@id/detectPictureView"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:text="이미지 분석하기"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        />
+
     <View
         android:id="@+id/historyPictureView"
         android:layout_width="150dp"
@@ -26,6 +41,20 @@
         app:layout_constraintStart_toEndOf="@id/detectPictureView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/detectPictureView"
-        android:background="@drawable/round_image"
+        android:background="@drawable/round_blue_button"
+        />
+
+    <TextView
+        android:layout_height="0dp"
+        android:layout_width="0dp"
+        app:layout_constraintStart_toStartOf="@id/historyPictureView"
+        app:layout_constraintEnd_toEndOf="@id/historyPictureView"
+        app:layout_constraintTop_toTopOf="@id/historyPictureView"
+        app:layout_constraintBottom_toBottomOf="@id/historyPictureView"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:text="히스토리 보기"
+        android:textColor="@color/white"
+        android:textSize="20sp"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>

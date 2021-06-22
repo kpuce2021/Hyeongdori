@@ -99,7 +99,11 @@ class LoginActivity : AppCompatActivity() {
 
         val userId = auth.currentUser?.uid.orEmpty()
         Log.d("loginToken",userId)
-        Firebase.database.reference.child(USERS).child(userId)
+        val userInf = mutableMapOf<String, Any>()
+        userInf["UserId"] = getInputEmail()
+        userInf["UserPassword"] = getInputPassword()
+
+        Firebase.database.reference.child(userId).updateChildren(userInf)
         finish()
     }
 
