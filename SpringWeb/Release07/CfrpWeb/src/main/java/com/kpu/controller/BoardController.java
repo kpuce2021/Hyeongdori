@@ -1,6 +1,8 @@
+//boardController
 package com.kpu.controller;
 
 import java.io.BufferedReader;
+
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
@@ -15,9 +17,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
-import com.google.gson.Gson;
-
 
 
 // Controller의 역할 : url을 Mapping 시킨다.
@@ -53,7 +52,6 @@ public class BoardController {
 		
 		List<String> resultList = new ArrayList<String>();
 		
-		Gson gson = new Gson();
 		int uncut = 0, spalling=0;
 		
 		for(int i=0; i<fileNameList.size(); i++) {

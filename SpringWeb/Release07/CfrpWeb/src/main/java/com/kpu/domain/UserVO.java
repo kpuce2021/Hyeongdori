@@ -1,44 +1,35 @@
 package com.kpu.domain;
 
 public class UserVO {
-	String PictureContent;
-	String PictureDate;
-	String PictureId;
-	String PictureUrl;
+	String id;
+	String passwd;
+	String email;
+	String mobile;
 	
-	public String getPictureContent() {
-		return PictureContent;
+	public String getId() {
+		return id;
 	}
-
-	public void setPictureContent(String pictureContent) {
-		PictureContent = pictureContent;
+	public void setId(String id) {
+		this.id = id;
 	}
-
-	public String getPictureDate() {
-		return PictureDate;
+	public String getPasswd() {
+		return passwd;
 	}
-
-	public void setPictureDate(String pictureDate) {
-		PictureDate = pictureDate;
+	public void setPasswd(String passwd) {
+		this.passwd = passwd;
 	}
-
-	public String getPictureId() {
-		return PictureId;
+	public String getEmail() {
+		return email;
 	}
-
-	public void setPictureId(String pictureId) {
-		PictureId = pictureId;
+	public void setEmail(String email) {
+		this.email = email;
 	}
-
-	public String getPictureUrl() {
-		return PictureUrl;
+	public String getMobile() {
+		return mobile;
 	}
-
-	public void setPictureUrl(String pictureUrl) {
-		PictureUrl = pictureUrl;
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
 	}
-
-	public String toString() {
-		return "["+PictureContent+"]"+", "+"["+PictureDate+"]"+"["+PictureId+"]"+"["+PictureUrl+"]";
-	}
+	
+	
 }

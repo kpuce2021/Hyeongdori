@@ -1,3 +1,4 @@
+<!-- registerUser -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -33,8 +34,8 @@
 }
 .register-form{
 	position:absolute;
-	top:50%;
-	left:50%;
+	top:30%;
+	left:15%;
 	width:100px;
 	height:100px;
 	margin:-50px 0 0 -50px;
@@ -48,35 +49,40 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
+
 <body>
+	<div class="container-fluid">
 		<div class="container register-form">
             <div class="form">
                 <div class="note">
                     <p>회원가입</p>
                 </div>
 
+			<form action="/registProcess" method="post">
                 <div class="form-content">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Your Name *" value=""/>
+                                <input type="text" class="form-control" placeholder="Your Id *" name="id"/>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Phone Number *" value=""/>
+                                <input type="text" class="form-control" placeholder="Your Password *" name="passwd"/>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Your Password *" value=""/>
+                                <input type="text" class="form-control" placeholder="Email *" name="email"/>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Confirm Password *" value=""/>
+                                <input type="text" class="form-control" placeholder="Mobile *" name="mobile"/>
                             </div>
                         </div>
                     </div>
-                    <button type="button" class="btnSubmit">Submit</button>
+                    <button type="submit" class="btnSubmit">Submit</button>
                 </div>
+             </form>
             </div>
         </div>
+	</div>
 </body>
 </html>
