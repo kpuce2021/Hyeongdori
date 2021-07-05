@@ -1,6 +1,9 @@
 package com.kpu.domain;
 
+
+
 public class UserVO {
+	
 	String id;
 	String passwd;
 	String email;
@@ -31,5 +34,8 @@ public class UserVO {
 		this.mobile = mobile;
 	}
 	
+	public String toString() {
+		return id+", "+passwd+", "+email+", "+mobile;
+	}
 	
 }

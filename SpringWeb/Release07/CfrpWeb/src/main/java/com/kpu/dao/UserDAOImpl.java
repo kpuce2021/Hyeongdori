@@ -24,7 +24,7 @@ public class UserDAOImpl implements UserDAO{
 	@Override
 	public List<UserVO> readList() throws Exception {
 		List<UserVO> userList = new ArrayList<UserVO>();
-		userList = sqlSession.selectList(namespace+".selectAll()");
+		userList = sqlSession.selectList(namespace+".selectAll");
 		return userList;
 	}
 
