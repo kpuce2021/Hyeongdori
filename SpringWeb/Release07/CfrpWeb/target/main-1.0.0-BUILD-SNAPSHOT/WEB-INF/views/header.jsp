@@ -21,8 +21,10 @@
 				 </li>
 				 
 				 <li>
+				 
 					  <div class="collapse navbar-collapse navbar-right" id="navbarsExample05">
-						  	<form class="form-inline" method="post">
+					  		<c:if test="${login == null}">
+						  	<form class="form-inline" action="/main-1.0.0-BUILD-SNAPSHOT/loginProcess" method="post">
 						    	<div class="form-group">
 						    		<input type="text" name="id" class="form-control mr-2" placeholder="id">
 						    	</div>
@@ -30,12 +32,19 @@
 						    		<input type="text" name="passwd" class="form-control mr-2" placeholder="password">
 						    	</div>
 						    	<button type="submit" class="btn btn-primary">Sign in</button>
-						    	<button type="button" onclick="location.href='http://3.37.42.228:8080/main-1.0.0-BUILD-SNAPSHOT/registerProcessing'" class="btn btn-primary">
+						    	<button type="button" onclick="location.href='http://3.37.42.228:8080/main-1.0.0-BUILD-SNAPSHOT/registPage'" class="btn btn-primary">
 						    		Sign up
-						    </button>
+						    	</button>
 						    </form>
-						    
+						    </c:if>
+						    <c:if test="${login != null}">
+								<button type="button" onclick="location.href='http://3.37.42.228:8080/main-1.0.0-BUILD-SNAPSHOT/logoutProcess'" class="btn btn-primary">
+									logout
+								</button>
+							</c:if>
 					  </div>
+				
+				
 				  </li>
 			  </ul>
 		</nav>

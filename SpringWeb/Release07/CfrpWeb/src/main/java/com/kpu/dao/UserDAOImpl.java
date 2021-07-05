@@ -44,5 +44,12 @@ public class UserDAOImpl implements UserDAO{
 	public void update(UserVO vo) throws Exception {
 		sqlSession.update(namespace+".update", vo);
 	}
+
+	@Override
+	public UserVO login(UserVO vo) throws Exception {
+		return sqlSession.selectOne(namespace+".login", vo);
+	}
+	
+	
 	
 }

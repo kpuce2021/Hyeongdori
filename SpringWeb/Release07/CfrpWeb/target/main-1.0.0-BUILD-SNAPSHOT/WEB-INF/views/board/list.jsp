@@ -4,6 +4,8 @@
 
 <html xmlns:th="http://www.thymeleaf.org">
 
+<jsp:include page="/WEB-INF/views/header.jsp"></jsp:include>
+
 <head>
 	<meta charset="UTF-8">
 	<title>detect 리스트</title>
@@ -120,3 +122,5 @@
 		      
 </body>
 </html>
+
+<jsp:include page="/WEB-INF/views/footer.jsp"></jsp:include>

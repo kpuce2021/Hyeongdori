@@ -22,7 +22,6 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public List<UserVO> readUserList() throws Exception {
-		
 		return userDAO.readList();
 	}
 
@@ -39,6 +38,11 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public void updateUser(UserVO vo) throws Exception {
 		userDAO.update(vo);
+	}
+
+	@Override
+	public UserVO loginUser(UserVO vo) throws Exception {	
+		return userDAO.login(vo);
 	}
 
 }

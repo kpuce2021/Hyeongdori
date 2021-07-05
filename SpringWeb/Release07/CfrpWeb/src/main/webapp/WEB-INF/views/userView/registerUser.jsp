@@ -58,7 +58,7 @@
                     <p>회원가입</p>
                 </div>
 
-			<form action="/registProcess" method="post">
+			<form action="/main-1.0.0-BUILD-SNAPSHOT/registProcess" method="post">
                 <div class="form-content">
                     <div class="row">
                         <div class="col-md-6">

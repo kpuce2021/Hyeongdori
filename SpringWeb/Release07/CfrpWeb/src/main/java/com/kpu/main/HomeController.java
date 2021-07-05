@@ -2,6 +2,7 @@ package com.kpu.main;
 
 import java.sql.Connection;
 
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -14,16 +15,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 
-/**
- * Handles requests for the application home page.
- */
 @Controller
 @RequestMapping("/main")
 public class HomeController {
 	
-	@GetMapping("home")
+	@RequestMapping(value="home", method= {RequestMethod.GET, RequestMethod.POST})
 	public String home(Locale locale, Model model) {
 		return "home";
 	}

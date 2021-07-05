@@ -23,6 +23,20 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
+	<!-- 인터셉터 설정 -->
+	<beans:bean id="authenticationInterceptor" class="com.kpu.interceptor.AuthenticationInterceptor">
+	
+	</beans:bean>
+	
+	<interceptors>
+		<interceptor>
+			<mapping path="/board/**"/>
+			<mapping path="/formFile"/>
+			<mapping path="/selectImage"/>
+			<mapping path="/detectImage"/>
+			<beans:ref bean="authenticationInterceptor"/>
+		</interceptor>
+	</interceptors>
 		
 	<!-- 파일 업로드 설정 -->
 	<beans:bean id = "multipartResolver"

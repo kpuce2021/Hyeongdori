@@ -10,5 +10,5 @@ public interface UserDAO {
 	public UserVO read(String id) throws Exception;
 	public void delete(String id) throws Exception;
 	public void update(UserVO vo) throws Exception;
-	
+	public UserVO login(UserVO vo) throws Exception;
 }

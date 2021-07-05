@@ -10,4 +10,5 @@ public interface UserService {
 	public void addUser(UserVO vo) throws Exception;
 	public void deleteUser(String id) throws Exception;
 	public void updateUser(UserVO vo) throws Exception;
+	public UserVO loginUser(UserVO vo) throws Exception;
 }

@@ -24,4 +24,8 @@
 	<delete id="delete">
 		delete from user where id = #{id}
 	</delete>
+	
+	<select id="login" resultType="com.kpu.domain.UserVO">
+		select * from user where id=#{id} AND passwd=#{passwd}
+	</select>
 </mapper>
