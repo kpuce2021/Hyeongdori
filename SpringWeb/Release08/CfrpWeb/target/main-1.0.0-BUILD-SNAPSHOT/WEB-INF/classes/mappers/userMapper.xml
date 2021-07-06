@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kpu.mapper.UserMapper">
+	<insert id="insert">
+		insert into user (id, passwd, email, mobile) values
+		(#{id}, #{passwd}, #{email}, #{mobile})
+	</insert>
+	
+	<select id="selectByid" resultType="com.kpu.domain.UserVO">
+		select * from user where id = #{id}
+	</select>
+	
+	<select id="selectAll" resultType="com.kpu.domain.UserVO">
+		<![CDATA[ select * from user ]]>
+	</select>
+	
+	<update id="update">
+		update user set id=#{id}, passwd=#{passwd}, email=#{email}, 
+		mobile=#{mobile} where id=#{id}
+	</update>
+	
+	<delete id="delete">
+		delete from user where id = #{id}
+	</delete>
+	
+	<select id="login" resultType="com.kpu.domain.UserVO">
+		select * from user where id=#{id} AND passwd=#{passwd}
+	</select>
+	
+	<select id="idChk" resultType="int">
+		select count(*) from user where id=#{id}
+	</select>
+</mapper>
