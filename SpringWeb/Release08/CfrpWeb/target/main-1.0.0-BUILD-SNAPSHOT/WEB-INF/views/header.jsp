@@ -9,6 +9,12 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+		<style>
+			ul{
+				list-style:none;
+				padding-left:0px;
+			}
+		</style>
 	</head>
 	
 	<body>
@@ -25,7 +31,7 @@
 					  <div class="collapse navbar-collapse navbar-right" id="navbarsExample05">
 					  	<!-- Session이 없을 때 로그인 form 제공 -->
 					  	<c:if test="${login == null}">
-						  	<form class="form-inline" action="/main-1.0.0-BUILD-SNAPSHOT/loginProcess" method="post">
+						  	<form class="form-inline" action="/main-1.0.0-BUILD-SNAPSHOT/loginProcess" method="post" style="margin-top:10px">
 						    	<div class="form-group">
 						    		<input type="text" name="id" class="form-control mr-2" placeholder="id">
 						    	</div>

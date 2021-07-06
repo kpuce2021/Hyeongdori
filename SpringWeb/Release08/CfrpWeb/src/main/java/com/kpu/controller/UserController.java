@@ -1,18 +1,18 @@
 
 package com.kpu.controller;
 
-import java.io.PrintWriter;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.kpu.domain.ScriptUtils;
 import com.kpu.domain.UserVO;
 import com.kpu.service.UserService;
 
@@ -50,27 +50,45 @@ public class UserController {
 		return "home";
 	}
 	
+	
+	
+	
 	@RequestMapping(value="/loginProcess", method=RequestMethod.POST)
-	public String loginPostMethod(HttpSession session, UserVO vo, HttpServletResponse response) throws Exception{
+	public void loginPostMethod(HttpSession session, UserVO vo, HttpServletResponse response, Model model) throws Exception{
 		if(session.getAttribute("login") != null)
 			session.removeAttribute("login");
 		
 		UserVO loginUser = uService.loginUser(vo);
 		
-		response.setContentType("text/html; charset=UTF-8");
-		PrintWriter out = response.getWriter();
+		if(loginUser == null) {
+			ScriptUtils.alertAndMovePage(response, "아이디 및 비밀번호를 확인하세요", "http://3.37.42.228:8080/main-1.0.0-BUILD-SNAPSHOT/main/home");
+		}
+		else { // 로그인 성공
+			session.setAttribute("login", loginUser);
+			ScriptUtils.alertAndMovePage(response, "로그인 성공", "http://3.37.42.228:8080/main-1.0.0-BUILD-SNAPSHOT/main/home");
+		}
+
+	}
+	/*
+	@RequestMapping(value="/loginProcess", method=RequestMethod.POST)
+	public String loginPostMethod(HttpSession session, UserVO vo, HttpServletResponse response, Model model) throws Exception{
+		if(session.getAttribute("login") != null)
+			session.removeAttribute("login");
+		
+		UserVO loginUser = uService.loginUser(vo);
 		
 		if(loginUser == null) {
-			out.println("<script>alert('로그인 정보를 확인해주세요.');</script>");
+			
 			return "redirect:/main/home";
 		}
 		else { // 로그인 성공
 			session.setAttribute("login", loginUser);
-			out.println("<script>alert('로그인 완료');</script>");
+			
 		}
 		
 		return "home";
 	}
+	 */
 	
 	@RequestMapping(value="/logoutProcess", method=RequestMethod.GET)
 	public String logoutMethod(HttpSession session) {

@@ -38,7 +38,7 @@
 .register-form{
 	position:absolute;
 	top:15%;
-	left:15%;
+	left:20%;
 	width:100px;
 	height:100px;
 	margin:-50px 0 0 -50px;
@@ -137,7 +137,7 @@
                         
                     </div>
                     <button type="submit" class="btnSubmit" id="submit">Submit</button>
-                    <button type="button" class="cancle btn btnSubmit">Cancle</button>
+                    <button type="button" class="cancle btnSubmit">Cancle</button>
                 </div>
              </form>
              
