@@ -10,6 +10,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletRequestWrapper;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
+
+import com.kpu.service.ImgResourceAccessService;
 
 @Controller
 public class SelectImageController {
@@ -27,9 +30,12 @@ public class SelectImageController {
 	@Resource(name="detectPath")
 	private String detectPath;
 	
+	@Autowired
+	private ImgResourceAccessService imgService;
+	
 	@RequestMapping(value="/selectImage", method=RequestMethod.GET)
-	public String selectImage(@RequestParam("img") String img, Model model, HttpServletRequest request) {
-		
+	public String selectImage(@RequestParam("img") String img, Model model, HttpServletRequest request) throws Exception {
+		/*
 		File path = new File(uploadPath); // 실제 사용 코드
 		File[] fileList = path.listFiles();
 		List<String> fileNameList = new ArrayList<String>();
@@ -43,6 +49,9 @@ public class SelectImageController {
 		
 		Collections.sort(fileNameList);
 		Collections.reverse(fileNameList);
+		*/
+		
+		List<String> fileNameList = imgService.ImgAccessService(uploadPath);
 		
 		model.addAttribute("fileList", fileNameList);
 		model.addAttribute("img", img);
@@ -51,7 +60,8 @@ public class SelectImageController {
 	}
 	
 	@RequestMapping(value="/detectImage", method=RequestMethod.GET)
-	public String detectImage(@RequestParam("img") String img, Model model, HttpServletRequest request) {
+	public String detectImage(@RequestParam("img") String img, Model model, HttpServletRequest request) throws Exception {
+		/*
 		// detectPath : /var/lib/tomcat9/webapps/detect/
 		// detectPath에 있는 모든 파일 목록 가져오기
 		File path = new File(detectPath);
@@ -78,6 +88,9 @@ public class SelectImageController {
 		}
 		Collections.sort(fileNameList);
 		Collections.reverse(fileNameList);
+		*/
+		
+		List<String> fileNameList = imgService.detectImgAccessService(detectPath);
 		
 		// 파일명만 저장된 리스트를 View에 전달하기 위한 모델 객체에 리스트 저장
 		model.addAttribute("fileList", fileNameList);
