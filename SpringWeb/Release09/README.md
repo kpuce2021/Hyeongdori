@@ -34,3 +34,13 @@
 ### :pushpin: Release 9 에러사항
 
 - AOP를 통한 로그 출력
+- Android To Server 컨트롤러에서 Post 방식의 요청이 불가 
+
+<br>
+
+
+
+### :pushpin: Release 10 기대사항
+
+-  Android와 Spring 간의 My SQL DB를 활용한 로그인, 회원가입 구현
+- AOP 로그 출력문제 해결
