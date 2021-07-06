@@ -34,9 +34,11 @@
 
 <br>
 
-### :pushpin: Release 8에서 기대사항
+### :pushpin: Release 9에서 기대사항
 
 - DoS, DDoS 공격을 대비한 우분투 iptables 설정
 - Release 7에서의 에러사항 해결
 - 차트 분석을 위한 사용자별 이미지 이름, 검출 결과를 My-SQL에 저장
+- 로그인, 회원가입 시 alert 출력 불가 해결
+- 앱과 My-SQL연동을 위한 페이지 구현
 
