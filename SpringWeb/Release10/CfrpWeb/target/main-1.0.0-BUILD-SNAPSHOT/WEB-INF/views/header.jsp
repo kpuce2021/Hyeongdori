@@ -64,8 +64,6 @@
 				  </li>
 			  </ul>
 		</nav>
-	
-		<hr>
 	</body>
 
 </html>

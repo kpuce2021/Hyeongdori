@@ -2,6 +2,8 @@
 package com.kpu.controller;
 
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -12,14 +14,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.kpu.domain.ResultVO;
 import com.kpu.domain.ScriptUtils;
 import com.kpu.domain.UserVO;
+import com.kpu.service.ResultService;
 import com.kpu.service.UserService;
 
 @Controller
 public class UserController {
 	@Autowired
 	private UserService uService;
+	
+	@Autowired
+	private ResultService rService;
 	
 	@RequestMapping(value="/registPage", method=RequestMethod.GET)
 	public String registGetMethod() throws Exception{
@@ -69,27 +76,7 @@ public class UserController {
 		}
 
 	}
-	/*
-	@RequestMapping(value="/loginProcess", method=RequestMethod.POST)
-	public String loginPostMethod(HttpSession session, UserVO vo, HttpServletResponse response, Model model) throws Exception{
-		if(session.getAttribute("login") != null)
-			session.removeAttribute("login");
-		
-		UserVO loginUser = uService.loginUser(vo);
-		
-		if(loginUser == null) {
-			
-			return "redirect:/main/home";
-		}
-		else { // 로그인 성공
-			session.setAttribute("login", loginUser);
-			
-		}
-		
-		return "home";
-	}
-	 */
-	
+
 	@RequestMapping(value="/logoutProcess", method=RequestMethod.GET)
 	public String logoutMethod(HttpSession session) {
 		session.invalidate();
@@ -101,5 +88,22 @@ public class UserController {
 	public int idChkMethod(UserVO vo) throws Exception{
 		int result = uService.userIdCheck(vo);
 		return result;
+	}
+	
+	@RequestMapping(value="/myInfo", method=RequestMethod.GET)
+	public String myInfoMethod(HttpSession session, UserVO uVO, ResultVO rVO, Model model) throws Exception{
+		uVO = (UserVO) session.getAttribute("login");
+		uVO = uService.readUser(uVO.getId());
+		
+		List<ResultVO> resultList = rService.readAllByUserId(uVO.getId());
+		
+		model.addAttribute("resultList", resultList);
+		model.addAttribute("user", uVO);
+		return "userView/MyInfoPage";
+	}
+	
+	@RequestMapping(value="/modifyUser", method=RequestMethod.GET)
+	public String modifyUserMethod() throws Exception{
+		return "userView/modifyUserPage";
 	}
 }

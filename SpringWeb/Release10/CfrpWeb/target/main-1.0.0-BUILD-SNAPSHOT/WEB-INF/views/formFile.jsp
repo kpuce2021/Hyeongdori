@@ -4,7 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 
-<jsp:include page="/WEB-INF/views/header.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/views/sideView/header.jsp"></jsp:include>
 
 
 
@@ -13,8 +13,6 @@
 	.inputArea { margin:10px 0; }
 	label { display:inline-block; width:70px; padding:5px; }
 	.select_img img { margin:20px 0; }
-	
-	
 	</style>
 	
 	<head>
@@ -32,18 +30,8 @@
 		      <div class="row">
 		         <!-- left content -->
 		         <div class="col-sm-3">
-		             <table>
-		                 <tr>
-		                     <td>
-		                <span style = "font-size:1.0em;  color: black; margin:4px">
-		    	            
-			            </span>
-		                     </td>
-		                 </tr>
-		             </table>
-		             
 		            <!-- side menu (link) -->
-		            <jsp:include page="/WEB-INF/views/sideBar.jsp"></jsp:include>
+		            <jsp:include page="/WEB-INF/views/sideView/sideBar.jsp"></jsp:include>
 		         </div>
 		         <!-- right content -->
 		         <div class="col-sm-8">
@@ -86,4 +74,4 @@
 	</body>
 </html>
 
-<jsp:include page="/WEB-INF/views/footer.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/views/sideView/footer.jsp"></jsp:include>

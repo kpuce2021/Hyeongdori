@@ -5,7 +5,7 @@
 
 <!DOCTYPE html>
 
-<jsp:include page="/WEB-INF/views/header.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/views/sideView/header.jsp"></jsp:include>
 
 
 <html>
@@ -42,7 +42,7 @@
 		             </table>
 		             
 		            <!-- side menu (link) -->
-		            <jsp:include page="/WEB-INF/views/sideBar.jsp"></jsp:include>
+		            <jsp:include page="/WEB-INF/views/sideView/sideBar.jsp"></jsp:include>
 		         </div>
 		         <!-- right content -->
 		         <div class="col-sm-8">
@@ -63,8 +63,8 @@
 				        </div>
 				    </div>
 		            	
-		            <br>
-		            <!--<c:if test="${img != null}">-->
+		            <br><br>
+		            
 		            	<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 		            		<div class="panel panel-default">
 		            			<div class="panel-heading" role="tab" id="headingOne">
@@ -95,13 +95,7 @@
 		            			</div>
 		            		</div>
 		            	</div>
-		            	<!-- 
-			            <fieldset>
-			            	<legend><h4><i class="glyphicon glyphicon-zoom-in"></i>${img} 자세히 보기</h4></legend>
-			            	<img src="http://3.37.42.228:8080/detect/${img}" width="700" height="500" alt="no image"/>
-			             </fieldset> -->
-		             <!--</c:if>-->
-		             <!-- 넣고싶은 글 넣으면 됌  -->
+		            	
 		         </div>
 		      </div>
 		 </div>
@@ -129,4 +123,4 @@
 </html>
 
 
-<jsp:include page="/WEB-INF/views/footer.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/views/sideView/footer.jsp"></jsp:include>

@@ -13,7 +13,7 @@
 	</div>
 	<div class="col-sm-6 col-md-4">
 		<div class="thumbnail">
-			<img style="margin-top:5px" src="https://user-images.githubusercontent.com/55940552/112968385-358d5780-9187-11eb-8f9f-a28ea61461db.png" alt="...">
+			<img style="margin-top:5px" src="https://user-images.githubusercontent.com/55940552/112968391-36be8480-9187-11eb-8090-e5b303436e01.png" alt="...">
 				<div class="caption" align="center">
 					<br>
 					<h3><b>CFRP 공정 결과 촬영</b></h3>		
@@ -22,7 +22,7 @@
 	</div>
 	<div class="col-sm-6 col-md-4">
 		<div class="thumbnail">
-			<img style="margin-top:5px" src="https://user-images.githubusercontent.com/55940552/112968391-36be8480-9187-11eb-8090-e5b303436e01.png" alt="...">
+			<img style="margin-top:5px" src="https://user-images.githubusercontent.com/55940552/112968385-358d5780-9187-11eb-8f9f-a28ea61461db.png" alt="...">
 				<div class="caption" align="center">
 					<br> 
 					<h3><b>결함 검출</b></h3>

@@ -3,25 +3,23 @@ package com.kpu.controller;
 
 import java.io.BufferedReader;
 
+
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedHashSet;
 import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import com.kpu.domain.ResultVO;
 import com.kpu.domain.UserVO;
 import com.kpu.service.ResultService;
 
@@ -43,50 +41,7 @@ public class BoardController {
 	
 	@RequestMapping(value="list", method=RequestMethod.GET)
 	public String list(Model model) throws Exception {
-		File path = new File(detectPath);
-		File[] fileList = path.listFiles();
-		List<String> fileNameList = new ArrayList<String>();
-		
-		if(fileList.length > 0) {
-			for(int i=0; i<fileList.length; i++) {
-				String[] temp = fileList[i].getName().split("\\.");
-				if(!temp[1].equals("jpg")) {
-					// 뒤에가 .txt인 파일들만 fileNameList에 넣는다.
-					fileNameList.add(detectPath+fileList[i].getName());
-				}
-			}
-		}
-		
-		Collections.sort(fileNameList);
-		Collections.reverse(fileNameList);
-		
-		List<String> resultList = new ArrayList<String>();
-		
-		int uncut = 0, spalling=0;
-		
-		for(int i=0; i<fileNameList.size(); i++) {
-			File file = new File(fileNameList.get(i));
-			
-			try (BufferedReader br = new BufferedReader(new FileReader(file))){
-					String line;
-					while((line = br.readLine()) != null) {
-						String[] temp = line.split(":");
-						if(temp[0].equals("uncut")) {
-							uncut += Integer.parseInt(temp[1]);
-						}
-						else if(temp[0].equals("spalling")) {
-							spalling += Integer.parseInt(temp[1]);
-						}
-						resultList.add(line);
-					}
-			}
-			catch(IOException e) {
-				e.printStackTrace();
-			}
-		}
-		
-		model.addAttribute("fileNameList", fileNameList);
-		model.addAttribute("resultList", resultList);
+		// 각 사용자별 결함 검출 결과를 DB에서 가져와서 차트로 그려주기
 		return "board/list"; 
 	}
 	
@@ -95,8 +50,17 @@ public class BoardController {
 		UserVO user = (UserVO)session.getAttribute("login"); // 현재 사용자의 세션을 받아온다.
 		 
 		List<String> resultImgNameList = rService.readImgNameListByUserId(user.getId());
+		LinkedHashSet<String> linkedHashSet = new LinkedHashSet<String>();
 		
-		model.addAttribute("resultList", resultImgNameList);
+		Collections.sort(resultImgNameList);
+		Collections.reverse(resultImgNameList);
+		
+		for(String item : resultImgNameList) {
+			linkedHashSet.add(item);
+		}
+		
+		
+		model.addAttribute("resultList", linkedHashSet);
 		model.addAttribute("img", img);
 		return "board/myDetectList";
 	}

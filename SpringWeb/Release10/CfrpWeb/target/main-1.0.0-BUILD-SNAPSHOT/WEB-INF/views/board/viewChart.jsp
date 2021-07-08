@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<jsp:include page="/WEB-INF/views/header.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/views/sideView/header.jsp"></jsp:include>
 
 <html xmlns:th="http://www.thymeleaf.org">
 
@@ -31,7 +31,7 @@
 		             </table>
 		             
 		            <!-- side menu (link) -->
-		            <jsp:include page="/WEB-INF/views/sideBar.jsp"></jsp:include>
+		            <jsp:include page="/WEB-INF/views/sideView/sideBar.jsp"></jsp:include>
 		         </div>
 		         <!-- right content -->
 		         <div class="col-sm-8">
@@ -93,4 +93,4 @@
 </body>
 </html>
 
-<jsp:include page="/WEB-INF/views/footer.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/views/sideView/footer.jsp"></jsp:include>

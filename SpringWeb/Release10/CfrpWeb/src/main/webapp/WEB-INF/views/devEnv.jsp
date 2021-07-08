@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
-<jsp:include page="/WEB-INF/views/header.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/views/sideView/header.jsp"></jsp:include>
 
 
 <html>
@@ -35,7 +35,7 @@
 		             </table>
 		             
 		            <!-- side menu (link) -->
-		            <jsp:include page="/WEB-INF/views/sideBar.jsp"></jsp:include>
+		            <jsp:include page="/WEB-INF/views/sideView/sideBar.jsp"></jsp:include>
 		         </div>
 		         <!-- right content -->
 		         <div class="col-sm-8">
@@ -86,7 +86,7 @@
 					    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
 					      <div class="panel-body">
 					         t3.xlarge 인스턴스 사용<br> 
-					         딥 러닝 프로그램을 제공할 서버로 웹과 앱의 이미지를 전송 받아 검출 후 결과를 응답해준다
+					         딥 러닝 프로그램을 제공할 서버로 웹과 앱의 이미지를 전송 받아 검출 후 결과를 응답
 					      </div>
 					    </div>
 					  </div>
@@ -129,4 +129,4 @@
 	</body>
 </html>
 
-<jsp:include page="/WEB-INF/views/footer.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/views/sideView/footer.jsp"></jsp:include>

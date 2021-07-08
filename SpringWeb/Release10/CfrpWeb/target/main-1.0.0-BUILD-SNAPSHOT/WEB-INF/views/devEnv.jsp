@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
-<jsp:include page="/WEB-INF/views/header.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/views/sideView/header.jsp"></jsp:include>
 
 
 <html>
@@ -35,7 +35,7 @@
 		             </table>
 		             
 		            <!-- side menu (link) -->
-		            <jsp:include page="/WEB-INF/views/sideBar.jsp"></jsp:include>
+		            <jsp:include page="/WEB-INF/views/sideView/sideBar.jsp"></jsp:include>
 		         </div>
 		         <!-- right content -->
 		         <div class="col-sm-8">
@@ -55,7 +55,9 @@
 					    </div>
 					    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
 					      <div class="panel-body">
-					        딥 러닝 서버로 이미지를 전송하기 위한 반응형 웹 사이트 제작<br> 
+					        딥 러닝 서버로 이미지를 전송하기 위한 반응형 웹 사이트 제작<br>
+					        Spring Interceptor를 이용한 로그인 및 회원가입 기능 구현<br>
+					        Transaction 을 통한 Data Access 성능 향상<br>
 					      </div>
 					    </div>
 					  </div>
@@ -84,7 +86,7 @@
 					    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
 					      <div class="panel-body">
 					         t3.xlarge 인스턴스 사용<br> 
-					         딥 러닝 프로그램을 제공할 서버로 웹과 앱의 이미지를 전송 받아 검출 후 결과를 응답해준다
+					         딥 러닝 프로그램을 제공할 서버로 웹과 앱의 이미지를 전송 받아 검출 후 결과를 응답
 					      </div>
 					    </div>
 					  </div>
@@ -92,13 +94,13 @@
 					    <div class="panel-heading" role="tab" id="headingFour">
 					      <h4 class="panel-title">
 					        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-					          [4] Firebase Cloud Platform
+					          [4] MySQL Database
 					        </a>
 					      </h4>
 					    </div>
 					    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
 					      <div class="panel-body">
-					         Firebase의 Realtime DB 서비스를 이용한 안드로이드 애플리케이션 사용자 정보 관리<br> 
+					         MySQL DB를 사용한 사용자별 결함 검출 결과 저장 및 로그인 ,회원가입 서비스<br> 
 					      </div>
 					    </div>
 					  </div>
@@ -127,4 +129,4 @@
 	</body>
 </html>
 
-<jsp:include page="/WEB-INF/views/footer.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/views/sideView/footer.jsp"></jsp:include>

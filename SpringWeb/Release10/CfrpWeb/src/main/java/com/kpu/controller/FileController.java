@@ -83,7 +83,7 @@ public class FileController {
 	    model.addAttribute("ResultVO", rVO);
 	    model.addAttribute("result", resEntity);
 		// 결함종류, 개수를 사용자에게 보여줄 부분 작성해야 함
-        return "view";
+        return "userView/view";
 	}
 	
 	@RequestMapping(value="/viewImage", method=RequestMethod.GET)
