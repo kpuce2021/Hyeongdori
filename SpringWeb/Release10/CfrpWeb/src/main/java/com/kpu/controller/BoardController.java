@@ -11,12 +11,19 @@ import java.util.Collections;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.kpu.domain.ResultVO;
+import com.kpu.domain.UserVO;
+import com.kpu.service.ResultService;
 
 
 // Controller의 역할 : url을 Mapping 시킨다.
@@ -30,6 +37,9 @@ public class BoardController {
 	
 	@Resource(name="detectPath")
 	private String detectPath;
+	
+	@Autowired
+	private ResultService rService;
 	
 	@RequestMapping(value="list", method=RequestMethod.GET)
 	public String list(Model model) throws Exception {
@@ -80,5 +90,15 @@ public class BoardController {
 		return "board/list"; 
 	}
 	
+	@RequestMapping(value="myDetectList", method=RequestMethod.GET)
+	public String myDetectListMethod(@RequestParam("img") String img, HttpSession session, Model model) throws Exception{
+		UserVO user = (UserVO)session.getAttribute("login"); // 현재 사용자의 세션을 받아온다.
+		 
+		List<String> resultImgNameList = rService.readImgNameListByUserId(user.getId());
+		
+		model.addAttribute("resultList", resultImgNameList);
+		model.addAttribute("img", img);
+		return "board/myDetectList";
+	}
 	
 }

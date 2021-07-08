@@ -31,7 +31,7 @@
 					  <div class="collapse navbar-collapse navbar-right" id="navbarsExample05">
 					  	<!-- Session이 없을 때 로그인 form 제공 -->
 					  	<c:if test="${login == null}">
-						  	<form class="form-inline" action="/main-1.0.0-BUILD-SNAPSHOT/loginProcess" method="post" style="margin-top:10px; margin-right:10px">
+						  	<form class="form-inline" action="/main-1.0.0-BUILD-SNAPSHOT/loginProcess" method="post" style="margin-top:10px; margin-right:15px">
 						    	<div class="form-group">
 						    		<input type="text" name="id" class="form-control mr-2" placeholder="id">
 						    	</div>
@@ -47,7 +47,7 @@
 						
 						<!-- Session 존재시 사용자 form 제공 -->
 						<c:if test="${login != null}">
-						    <form class="form-inline">
+						    <form class="form-inline" style="margin-top:10px; margin-right:15px">
 						    	<div class="form-group">
 						    		<label class="control-label">${login.id}님 환영합니다. </label>
 						    	</div>

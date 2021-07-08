@@ -36,8 +36,9 @@
 		         <div class="col-sm-8">
 		         <br>
 		         	<h2><i class="glyphicon glyphicon-transfer"></i>전송 결과 확인 
-		         	<button class="btn btn-default" href="/main-1.0.0-BUILD-SNAPSHOT/main/home">홈으로 이동</button>
-		         	<button class="btn btn-default" href="/main-1.0.0-BUILD-SNAPSHOT/formFile">다른 이미지 선택</button>
+		         	<button class="btn btn-primary" onclick="location.href='http://3.37.42.228:8080/main-1.0.0-BUILD-SNAPSHOT/main/home'">홈으로 이동</button>
+		         	<button class="btn btn-primary" onclick="location.href='http://3.37.42.228:8080/main-1.0.0-BUILD-SNAPSHOT/formFile'">다른 이미지 선택</button>
+		         	<button class="btn btn-primary" onclick="location.href='http://3.37.42.228:8080/main-1.0.0-BUILD-SNAPSHOT/board/myDetectList?img=#'">내 결과 리스트</button>
 		         	</h2>
 		         		<div class="row">
 			         		<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="false">
@@ -45,7 +46,7 @@
 			         				<div class="panel-heading" role="tab" id="headingOne">
 			         					<h4 class="panel-title">
 			         						<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true">
-			         						${result.getResult()} Click[이미지 확인]	
+			         						${result.getResult()}개의 결함 발견	
 			         						</a>
 			         					</h4>
 			         				</div>
@@ -57,6 +58,14 @@
 			         				</div>
 			         			</div>
 			         		</div>
+			         		<br>
+			         		<table>
+			         			<tr><th>현재 사용자 : </th><td><input type="text" value="${ResultVO.id}"/></td></tr>
+			         			<tr><th>저장된 이미지 : </th><td><input type="text" value="${ResultVO.imgName}"/></td></tr>
+			         			<tr><th>발견된 uncut(미절삭 섬유) 개수 : </th><td><input type="text" value="${ResultVO.uncut}"/></td></tr>
+			         			<tr><th>발견된 spalling(박리현상) 개수 : </th><td><input type="text" value="${ResultVO.spalling}"/></td></tr>
+			         		</table>
+			         		
 			         	  </div>
 			         	</div>
 		         	</div>
