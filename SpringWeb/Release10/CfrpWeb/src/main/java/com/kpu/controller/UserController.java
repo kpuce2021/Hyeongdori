@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -103,7 +104,25 @@ public class UserController {
 	}
 	
 	@RequestMapping(value="/modifyUser", method=RequestMethod.GET)
-	public String modifyUserMethod() throws Exception{
+	public String modifyUserMethod(HttpSession session, UserVO uVO, Model model) throws Exception{
+		uVO = (UserVO)session.getAttribute("login");
+		uVO = uService.readUser(uVO.getId());
+		
+		model.addAttribute("user", uVO);
 		return "userView/modifyUserPage";
+	}
+	
+	@RequestMapping(value="modifyUser", method=RequestMethod.POST)
+	public String modifyPostMethod(@ModelAttribute("user") UserVO uVO) throws Exception {
+		uService.updateUser(uVO);
+		return "redirect:/main/home";
+	}
+	
+	@RequestMapping(value="/withDrawal", method=RequestMethod.GET)
+	public String withDrawalMethod(UserVO uVO, HttpSession session, HttpServletResponse response) throws Exception{
+		uVO = (UserVO)session.getAttribute("login");
+		uService.deleteUser(uVO.getId());
+		ScriptUtils.alert(response, "회원탈퇴가 완료되었습니다.");
+		return "redirect:/main/home";
 	}
 }

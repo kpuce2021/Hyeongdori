@@ -1,17 +1,10 @@
 //boardController
 package com.kpu.controller;
 
-import java.io.BufferedReader;
-
-
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.List;
-
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +13,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import com.google.gson.Gson;
+import com.kpu.domain.ResultVO;
 import com.kpu.domain.UserVO;
 import com.kpu.service.ResultService;
 
@@ -39,10 +35,24 @@ public class BoardController {
 	@Autowired
 	private ResultService rService;
 	
-	@RequestMapping(value="list", method=RequestMethod.GET)
-	public String list(Model model) throws Exception {
-		// 각 사용자별 결함 검출 결과를 DB에서 가져와서 차트로 그려주기
-		return "board/list"; 
+	@RequestMapping(value="/list", method=RequestMethod.GET)
+	public String listViewMethod() {
+		return "board/list";
+	}
+	
+	@RequestMapping(value="/listData", method=RequestMethod.GET, produces="text/plain; charset=UTF-8")
+	public @ResponseBody String list(HttpSession session, UserVO uVO, ResultVO rVO, Model model) throws Exception {
+		uVO = (UserVO)session.getAttribute("login");
+		List<ResultVO> rList = rService.readAllByUserId(uVO.getId());
+		
+		for(int i=0; i<rList.size(); i++) {
+			String[] temp = rList.get(i).getImgName().split("\\.");
+			rList.get(i).setImgName(temp[0]);
+		}
+		
+		Gson gson = new Gson();
+		
+		return gson.toJson(rList); 
 	}
 	
 	@RequestMapping(value="myDetectList", method=RequestMethod.GET)
