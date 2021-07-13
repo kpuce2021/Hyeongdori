@@ -61,6 +61,9 @@
 				        </div>
 				    </div>
 				    <br>
+				    
+				    <p style="color:red; font-style:italic">사진을 클릭하면 확대해서 볼 수 있습니다.</p><br>
+				    
 				    <c:if test="${img != null}">
 					    <fieldset>
 					    	<legend><h4><i class="glyphicon glyphicon-zoom-in"></i>${img} 자세히 보기</h4></legend>

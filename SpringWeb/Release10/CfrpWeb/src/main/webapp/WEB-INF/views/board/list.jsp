@@ -21,8 +21,9 @@
 	
 	<!-- style="width: 80%"  -->
 	<div align="center">
-		<div>
-			<canvas id="canvas" height="450" width="600"></canvas>
+		<div style="height:700px; width:1500px">
+			<canvas id="canvas"></canvas>
+			<!-- <canvas id="canvas" height="350" width="500"></canvas> -->
 		</div>
 	</div>
 	
@@ -47,22 +48,26 @@
 			datasets : [{
 				label : "미절삭 섬유",
 				type : 'line',
-				fillColor : "rgba(114, 66, 47, 0.7)",
-				strokeColor : "rgba(114, 66, 47, 0.7)",
-				pointColor : "rgba(114, 66, 47, 0.7)",
-				pointStrokeColor : "#fff",
-				pointHighlightFill : "#fff",
-				pointHighlightStroke : "rgba(114, 66, 47, 0.7)",
+				backgroundColor: "#bfdaf9",
+				borderColor: "#80b6f4",
+				pointBorderColor: "#80b6f4",
+				pointBackgroundColor: "#80b6f4",
+				pointHoverBackgroundColor: "#80b6f4",
+				pointHoverBorderColor: "#80b6f4",
+				fill: false,
+				borderWidth: 3,
 				data : chartData1
 			},{
 				label : "박리현상",
 				type : 'line',
-				fillColor : "rgba(151,187, 205, 1)",
-				strokeColor : "rgba(151, 187, 205, 1)",
-				pointColor : "rgba(151, 187, 205, 1)",
-				pointStrokeColor : "#fff",
-				pointHighlightFill : "#fff",
-				pointHighlightStroke : "rgba(151, 187, 205, 1)",
+				backgroundColor: "#4e4e4e",
+				borderColor: "#4e4e4e",
+				pointBorderColor: "#4e4e4e",
+				pointBackgroundColor: "#4e4e4e",
+				pointHoverBackgroundColor: "#4e4e4e",
+				pointHoverBorderColor: "#4e4e4e",
+				fill: false,
+				borderWidth: 3,
 				data : chartData2
 			}]
 		

@@ -31,7 +31,7 @@ public class ResultDAOImpl implements ResultDAO{
 	@Override
 	public List<ResultVO> readAllList() throws Exception {
 		List<ResultVO> rVoList = new ArrayList<ResultVO>();
-		rVoList = sqlSession.selectList(namespace+"selectAll");
+		rVoList = sqlSession.selectList(namespace+".selectAll");
 		return rVoList;
 	}
 

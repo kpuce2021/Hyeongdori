@@ -48,7 +48,7 @@
 						<!-- Session 존재시 사용자 form 제공 -->
 						<c:if test="${login != null}">
 						    <form class="form-inline" style="margin-top:10px; margin-right:15px">
-						    	<div class="form-group">
+						    	<div class="form-group" style="margin-right:5px">
 						    		<label class="control-label">${login.id}님 환영합니다. </label>
 						    	</div>
 						    	<div class="form-group">

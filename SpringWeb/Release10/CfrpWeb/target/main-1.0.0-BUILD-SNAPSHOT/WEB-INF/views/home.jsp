@@ -27,14 +27,26 @@
 			  		</a>
 			  	</p>
 			  	
-			  	 -->
-			  	 <form class="form-inline">
-			  	 	<button type="button" class="btn btn-primary" onlick="location.href='https://github.com/kpuce2021/Hyeongdori'">
+			  	<button type="button" class="btn btn-primary" onlick="location.href='https://github.com/kpuce2021/Hyeongdori'">
 			  	 		Github
 			  	 	</button>
-			  	 	<button type="button" class="btn btn-primary" onlick="location.href='http://3.37.42.228:8080/main-1.0.0-BUILD-SNAPSHOT/main/env'">
+			  	 	<button type="button" class="btn btn-primary" onlick="location.href='http://3.37.42.228:8080/main-1.0.0-BUILD-SNAPSHOT/env'">
 			  	 		개발 환경
 			  	 	</button>
+			  	 -->
+			  	 <form class="form-inline">
+			  	 	<div class="form-group">
+			  	 		<a class="btn btn-primary" href="https://github.com/kpuce2021/Hyeongdori" role="button">
+			  	 			<i class="fab fa-github-square" aria-hidden="true"></i>
+			  				 Github
+			  	 		</a>
+			  	 	</div>
+			  	 	
+			  	 	<div class="form-group">
+			  	 		<a class="btn btn-primary" href="http://3.37.42.228:8080/main-1.0.0-BUILD-SNAPSHOT/env" role="button">
+			  	 			개발 환경
+			  	 		</a>
+			  	 	</div>
 			  	 </form>
 			</div>
 		</div>

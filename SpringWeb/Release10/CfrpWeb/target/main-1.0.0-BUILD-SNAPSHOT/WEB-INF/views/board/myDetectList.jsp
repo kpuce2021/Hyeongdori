@@ -65,12 +65,14 @@
 		            	
 		            <br><br>
 		            
+		            <p style="color:red; font-style:italic">사진을 클릭하면 확대해서 볼 수 있습니다.</p><br>
+		            
 		            	<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 		            		<div class="panel panel-default">
 		            			<div class="panel-heading" role="tab" id="headingOne">
 		            				<h4 class="panel-title">
 		            					<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-		            						<i class="glyphicon glyphicon-zoom-in"></i>검출 전 ${img}
+		            						<i class="glyphicon glyphicon-zoom-in"></i>검출 전 이미지 : ${img}
 		            					</a>
 		            				</h4>
 		            			</div>
@@ -84,7 +86,7 @@
 		            			<div class="panel-heading" role="tab" id="headingTwo">
 		            				<h4 class="panel-title">
 		            					<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-		            						<i class="glyphicon glyphicon-zoom-in"></i>검출 후 ${img}
+		            						<i class="glyphicon glyphicon-zoom-in"></i>검출 후 이미지 : ${img}
 		            					</a>
 		            				</h4>
 		            			</div>

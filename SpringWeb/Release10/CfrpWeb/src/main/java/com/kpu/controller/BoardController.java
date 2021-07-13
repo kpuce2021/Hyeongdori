@@ -1,6 +1,10 @@
 //boardController
 package com.kpu.controller;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedHashSet;
@@ -17,10 +21,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.google.gson.Gson;
 import com.kpu.domain.ResultVO;
 import com.kpu.domain.UserVO;
+import com.kpu.service.ImgResourceAccessService;
 import com.kpu.service.ResultService;
 
-
-// Controller의 역할 : url을 Mapping 시킨다.
 
 @Controller
 @RequestMapping("/board")
@@ -35,15 +38,35 @@ public class BoardController {
 	@Autowired
 	private ResultService rService;
 	
+	@RequestMapping(value="/allList", method=RequestMethod.GET)
+	public String allListViewMethod() throws Exception{
+		return "board/allList";
+	}
+	
 	@RequestMapping(value="/list", method=RequestMethod.GET)
-	public String listViewMethod() {
+	public String listViewMethod() throws Exception{
 		return "board/list";
+	}
+	
+	@RequestMapping(value="/allListData", method=RequestMethod.GET, produces="text/plain; charset=UTF-8")
+	public @ResponseBody String allListMethod() throws Exception{
+		List<ResultVO> rList = rService.readAllUserList();
+		
+		for(int i=0; i<rList.size(); i++) {
+			String[] temp = rList.get(i).getImgName().split("\\.");
+			rList.get(i).setImgName(temp[0]);
+		}
+		
+		Gson gson = new Gson();
+		
+		return gson.toJson(rList);
 	}
 	
 	@RequestMapping(value="/listData", method=RequestMethod.GET, produces="text/plain; charset=UTF-8")
 	public @ResponseBody String list(HttpSession session, UserVO uVO, ResultVO rVO, Model model) throws Exception {
 		uVO = (UserVO)session.getAttribute("login");
 		List<ResultVO> rList = rService.readAllByUserId(uVO.getId());
+		
 		
 		for(int i=0; i<rList.size(); i++) {
 			String[] temp = rList.get(i).getImgName().split("\\.");

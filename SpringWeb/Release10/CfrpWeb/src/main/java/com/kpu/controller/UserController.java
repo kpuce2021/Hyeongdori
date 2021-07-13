@@ -125,4 +125,9 @@ public class UserController {
 		ScriptUtils.alert(response, "회원탈퇴가 완료되었습니다.");
 		return "redirect:/main/home";
 	}
+	
+	@RequestMapping(value="/env", method=RequestMethod.GET)
+	public String envMethod() throws Exception{
+		return "devEnv";
+	}
 }
