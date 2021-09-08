@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kpu.mapper.ImgMapper">
+	<insert id="insert">
+		insert into result (id, imgName, uncut, spalling) values
+		(#{id}, #{imgName}, #{uncut}, #{spalling})
+	</insert>
+	
+	<select id="selectImgName" resultType="String">
+		select imgName from result where id = #{id}
+	</select>
+	
+	<select id="selectAllByid" resultType="com.kpu.domain.ResultVO">
+		select * from result where id = #{id}
+	</select>
+	
+	<select id="selectAll" resultType="com.kpu.domain.ResultVO">
+		<![CDATA[ select * from result ]]>
+	</select>
+	
+	<delete id="delete">
+		delete from result where id = #{id}
+	</delete>
+	
+	
+</mapper>
