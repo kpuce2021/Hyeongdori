@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 		<style>
 			ul{
 				list-style:none;
@@ -47,6 +48,17 @@
 						
 						<!-- Session 존재시 사용자 form 제공 -->
 						<c:if test="${login != null}">
+						<div class="w3-container" style="margin-top:10px; margin-right:15px">
+							<label class="w3-text-black">${login.id}님 환영합니다. </label>
+							<button type="button" style="margin-right:5px" onclick="location.href='http://3.34.77.179:8080/main-1.0.0-BUILD-SNAPSHOT/myInfo'" class="btn btn-primary">
+								내 정보
+							</button>
+							<button type="button" onclick="location.href='http://3.34.77.179:8080/main-1.0.0-BUILD-SNAPSHOT/logoutProcess'" class="btn btn-primary">
+								로그아웃
+							</button>
+						</div>
+						
+						<!-- 
 						    <form class="form-inline" style="margin-top:10px; margin-right:15px">
 						    	<div class="form-group" style="margin-right:5px">
 						    		<label class="control-label">${login.id}님 환영합니다. </label>
@@ -56,10 +68,11 @@
 										내 정보
 									</button>
 									<button type="button" onclick="location.href='http://3.34.77.179:8080/main-1.0.0-BUILD-SNAPSHOT/logoutProcess'" class="btn btn-primary">
-										logout
+										로그아웃
 									</button>
 								</div>
 							</form>
+						 -->
 						</c:if>
 					  </div>
 				

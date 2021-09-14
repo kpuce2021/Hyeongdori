@@ -22,6 +22,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	
 	</head>
 	<body>
@@ -64,7 +65,20 @@
 				    </div>
 		            	
 		            <br><br>
-		            <p style="color:red; font-style:italic">사진을 클릭하면 확대해서 볼 수 있습니다.</p><br>
+		            <p style="color:red; font-style:italic">위에 사진을 클릭하면 확대해서 볼 수 있습니다.</p><br>
+		              
+					<button onclick="myFunction('Demo1')" class="w3-btn w3-round-large w3-block w3-black w3-left-align"><i class="glyphicon glyphicon-zoom-in"></i> 검출 전 이미지 : ${img}</button>
+					<div id="Demo1" class="w3-container w3-hide">
+					  <img src="http://3.34.77.179:8080/upload/${img}" width="700" height="500" alt="no image"/>
+					</div>
+					<br>
+					<button onclick="myFunction('Demo2')" class="w3-btn w3-round-large w3-block w3-black w3-left-align"><i class="glyphicon glyphicon-zoom-in"></i> 검출 후 이미지 : ${img}</button>
+					<div id="Demo2" class="w3-container w3-hide">
+					  <img src="http://3.34.77.179:8080/detect/${img}" width="700" height="500" alt="no image"/>
+					</div>
+					
+					<script type="text/javascript" src="<c:url value="/resources/js/accordions.js"/>"></script>
+		            	<!-- 
 		            	<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 		            		<div class="panel panel-default">
 		            			<div class="panel-heading" role="tab" id="headingOne">
@@ -95,7 +109,7 @@
 		            			</div>
 		            		</div>
 		            	</div>
-		            	
+		            	 -->
 		         </div>
 		      </div>
 		 </div>

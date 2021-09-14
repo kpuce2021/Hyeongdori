@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import com.google.gson.Gson;
+import com.kpu.domain.ResultDayVO;
 import com.kpu.domain.ResultVO;
 import com.kpu.domain.UserVO;
 import com.kpu.service.ImgResourceAccessService;
@@ -39,7 +40,9 @@ public class BoardController {
 	private ResultService rService;
 	
 	@RequestMapping(value="/allList", method=RequestMethod.GET)
-	public String allListViewMethod() throws Exception{
+	public String allListViewMethod(Model model) throws Exception{
+		List<ResultDayVO> rdVO = rService.readAllImgNameByDay();
+		model.addAttribute("days", rdVO);
 		return "board/allList";
 	}
 	

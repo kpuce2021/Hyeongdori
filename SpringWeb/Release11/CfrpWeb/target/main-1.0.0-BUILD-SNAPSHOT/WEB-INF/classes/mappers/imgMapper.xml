@@ -20,6 +20,14 @@
 		<![CDATA[ select * from result ]]>
 	</select>
 	
+	<select id="selectAllImgDay" resultType="com.kpu.domain.ResultDayVO">
+		<![CDATA[
+			select substring(imgName, 1, 8) as days, sum(uncut) as sumOfUncut, sum(spalling) as sumOfSpalling,
+			avg(uncut) as avgOfUncut, avg(spalling) as avgOfSpalling
+			 from result group by substring(imgName, 1, 8)
+		]]>
+	</select>
+	
 	<delete id="delete">
 		delete from result where id = #{id}
 	</delete>

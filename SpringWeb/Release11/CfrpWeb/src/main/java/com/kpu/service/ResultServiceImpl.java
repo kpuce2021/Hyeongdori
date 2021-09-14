@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.kpu.dao.ResultDAO;
+import com.kpu.domain.ResultDayVO;
 import com.kpu.domain.ResultVO;
 
 @Service
@@ -42,4 +43,8 @@ public class ResultServiceImpl implements ResultService{
 		return rDAO.readImgNameList(id);
 	}
 
+	// 일자별 평균 검출 결과 뽑아내는 코드
+	public List<ResultDayVO> readAllImgNameByDay() throws Exception{
+		return rDAO.readAllImgByDay();
+	}
 }

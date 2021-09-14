@@ -20,6 +20,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	
 	</head>
 	<body>
@@ -62,13 +63,20 @@
 				    </div>
 				    <br>
 				    
-				    <p style="color:red; font-style:italic">사진을 클릭하면 확대해서 볼 수 있습니다.</p><br>
+				    <p style="color:red; font-style:italic">위에 사진을 클릭하면 확대해서 볼 수 있습니다.</p><br>
 				    
 				    <c:if test="${img != null}">
+				    <button onclick="myFunction('Demo1')" class="w3-btn w3-round-large w3-block w3-black w3-left-align"><i class="glyphicon glyphicon-zoom-in"></i> ${img} 자세히 보기</button>
+					<div id="Demo1" class="w3-container w3-hide">
+					  <img src="http://3.34.77.179:8080/upload/${img}" width="720" height="500" alt="no image"/>
+					</div>
+					<script type="text/javascript" src="<c:url value="/resources/js/accordions.js"/>"></script>
+				    <!-- 
 					    <fieldset>
 					    	<legend><h4><i class="glyphicon glyphicon-zoom-in"></i>${img} 자세히 보기</h4></legend>
 			            	<img src="http://3.34.77.179:8080/upload/${img}" width="720" height="500" alt="no image"/>
 			            </fieldset>
+					-->
 		            </c:if>
 		             <!-- 넣고싶은 글 넣으면 됌  -->
 		         </div>

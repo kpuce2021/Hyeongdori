@@ -49,6 +49,7 @@
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
 <body>
@@ -65,22 +66,26 @@
                         <div class="col-md-6">
                         	<div align="center">
 	                            <div class="form-group">
+	                            	<label class="w3-text-blue" align="left"><b>User ID</b></label>
 	                                <input type="text" id="id" class="form-control" name="id" readonly value="${user.id}"/>
 	                            </div>
 	                            <div class="form-group">
+	                            	<label class="w3-text-blue" align="left"><b>User Password</b></label>
 	                                <input type="text" id="passwd" class="form-control" name="passwd" value="${user.passwd}"/>
 	                            </div>
 	                            <div class="form-group">
+	                            	<label class="w3-text-blue" align="left"><b>User Email</b></label>
 	                                <input type="text" id="email" class="form-control" name="email" value="${user.email}"/>
 	                            </div>
 	                            <div class="form-group">
+	                            	<label class="w3-text-blue" align="left"><b>User Mobile</b></label>
 	                                <input type="text" id="mobile" class="form-control" name="mobile" value="${user.mobile}"/>
 	                            </div>
                         	</div>
                         </div>
                     </div>
-                    <button type="submit" class="btnSubmit" id="submit">Submit</button>
-                    <button type="button" class="cancle btnSubmit" onlick="location.href='http://3.34.77.179:8080/main-1.0.0-BUILD-SNAPSHOT/myInfo'">Cancle</button>
+                    <button type="submit" class="btnSubmit" id="submit" onclick="alert('Complete')">Submit</button>
+                    <button type="button" class="cancle btnSubmit" onlick="location.href='http://3.34.77.179:8080/main-1.0.0-BUILD-SNAPSHOT/main/home'">Cancle</button>
                 </div>
              </form>
              

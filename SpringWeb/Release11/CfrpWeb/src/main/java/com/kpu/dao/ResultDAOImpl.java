@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.kpu.domain.ResultDayVO;
 import com.kpu.domain.ResultVO;
 
 @Repository
@@ -47,4 +48,9 @@ public class ResultDAOImpl implements ResultDAO{
 		return imgNameList;
 	}
 
+	public List<ResultDayVO> readAllImgByDay() throws Exception{
+		List<ResultDayVO> dayResultList = new ArrayList<ResultDayVO>();
+		dayResultList = sqlSession.selectList(namespace+".selectAllImgDay");
+		return dayResultList;
+	}
 }

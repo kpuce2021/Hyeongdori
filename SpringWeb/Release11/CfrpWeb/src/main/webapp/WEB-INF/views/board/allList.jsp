@@ -12,6 +12,9 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body> 
@@ -26,22 +29,40 @@
 			</div>
 			<div class="col-sm-8">
 				<div align="center">
-					<div style="height:700px; width:1500px">
-						<canvas id="canvas"></canvas>
-						<!-- <canvas id="canvas" height="350" width="500"></canvas> -->
+					<br>
+					<div class="w3-container">
+						<c:forEach var="day" items="${days}">
+							<button class="w3-btn w3-round-large w3-black" style="margin-right:5px">${day.days}</label>
+						</c:forEach>
 					</div>
+					<br>
+					<hr style="height:3px;border-width:0;color:white;background-color:white"><br>
+					
+					<div class="w3-container">
+						<div class="w3-panel w3-gray">
+							<p>시간별 차트</p>
+						</div>
+						<div style="height:700px; width:800px">
+							<canvas id="canvas"></canvas>
+							<!-- <canvas id="canvas" height="350" width="500"></canvas> -->
+						</div>
+					</div>
+					
+					<div class="w3-container">
+						<div class="w3-panel w3-gray">
+							<p>일자별 차트</p>
+						</div>
+						<div style="height:700px; width:800px">
+							<canvas id="canvas"></canvas>
+							<!-- <canvas id="canvas" height="350" width="500"></canvas> -->
+						</div>
+					</div>
+					
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- style="width: 80%"  -->
-	<!-- 
-	<div align="center">
-		<div style="height:700px; width:1500px">
-			<canvas id="canvas"></canvas>
-		</div>
-	</div>
-	 -->
+	
 	 
 	<script>
 		var chartLabels = [];
@@ -105,6 +126,7 @@
 		
 		}
 	</script>
+
 	
 	<br><br><hr color="black"/>
 </body>
